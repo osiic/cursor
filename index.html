@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <style>
+    body {
+      height: 100vh;
+    }
+
+    .curcor {
+      width: 60px;
+      aspect-ratio: 1/1;
+      border-radius: 999px;
+      border: solid black 3px;
+      position: fixed;
+      top: 50;
+      left: 50;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="curcor"></div>
+  <script>
+    const cursor = document.querySelector(".curcor");
+
+    window.addEventListener("mousemove", (e) => {
+      // cursor.style.left = `${e.clientX}px`;
+      // cursor.style.top = `${e.clientY}px`;
+
+      cursor.animate(
+        {
+          left: `${e.clientX}px`,
+          top: `${e.clientY}px`,
+        },
+        {duration: 500, fill: "forwards"},
+      );
+    });
+  </script>
+</body>
+
+</html>
